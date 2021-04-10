@@ -1,0 +1,10 @@
+{
+	"ServerName": {
+		"type": "string",
+		"value": "gobibo.database.windows.net"
+	},
+	"DatabaseName": {
+		"type": "string",
+		"value": "gobibodb"
+	}
+}
