@@ -1,0 +1,63 @@
+{
+	"name": "ADFConfiguration",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"DatabaseName": "gobibodb",
+				"ServerName": "gobibo.database.windows.net",
+				"Username": "gobibo"
+			}
+		},
+		"parameters": {
+			"SchemaName": {
+				"type": "String",
+				"defaultValue": "dbo"
+			},
+			"TableName": {
+				"type": "String",
+				"defaultValue": "ADFConfiguration"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ServerName",
+				"type": "varchar"
+			},
+			{
+				"name": "DatabaseName",
+				"type": "varchar"
+			},
+			{
+				"name": "Source_SchemaName",
+				"type": "varchar"
+			},
+			{
+				"name": "Source_TableName",
+				"type": "varchar"
+			},
+			{
+				"name": "Target_SchemaName",
+				"type": "varchar"
+			},
+			{
+				"name": "Target_TableName",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": {
+				"value": "@{dataset().SchemaName}",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@{dataset().TableName}",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,39 @@
+{
+	"name": "StudentData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "name",
+				"type": "varchar"
+			},
+			{
+				"name": "date_of_birth",
+				"type": "varchar"
+			},
+			{
+				"name": "teacher_name",
+				"type": "varchar"
+			},
+			{
+				"name": "subjects",
+				"type": "varchar"
+			},
+			{
+				"name": "marks",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "studentdata"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

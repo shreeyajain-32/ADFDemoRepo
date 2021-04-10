@@ -1,0 +1,68 @@
+{
+	"name": "StudentDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"DatabaseName": "gobibodb",
+				"ServerName": "gobibo.database.windows.net",
+				"Username": "gobibo"
+			}
+		},
+		"parameters": {
+			"DatabaseName": {
+				"type": "string",
+				"defaultValue": "gobibodb"
+			},
+			"ServerName": {
+				"type": "string",
+				"defaultValue": "gobibo.database.windows.net"
+			},
+			"SchemaName": {
+				"type": "string",
+				"defaultValue": "dbo"
+			},
+			"TableName": {
+				"type": "string",
+				"defaultValue": "studentdata"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "name",
+				"type": "varchar"
+			},
+			{
+				"name": "date_of_birth",
+				"type": "varchar"
+			},
+			{
+				"name": "teacher_name",
+				"type": "varchar"
+			},
+			{
+				"name": "subjects",
+				"type": "varchar"
+			},
+			{
+				"name": "marks",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": {
+				"value": "@{dataset().SchemaName}",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@{dataset().TableName}",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

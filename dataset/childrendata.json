@@ -1,0 +1,60 @@
+{
+	"name": "childrendata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"DatabaseName": "gobibodb",
+				"ServerName": "gobibo.database.windows.net",
+				"Username": "gobibo"
+			}
+		},
+		"parameters": {
+			"SchemaName": {
+				"type": "String",
+				"defaultValue": "dbo"
+			},
+			"TableName": {
+				"type": "String",
+				"defaultValue": "childrendata"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "name",
+				"type": "varchar"
+			},
+			{
+				"name": "date_of_birth",
+				"type": "varchar"
+			},
+			{
+				"name": "teacher_name",
+				"type": "varchar"
+			},
+			{
+				"name": "subjects",
+				"type": "varchar"
+			},
+			{
+				"name": "marks",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": {
+				"value": "@{dataset().SchemaName}",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@{dataset().TableName}",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,21 @@
+{
+	"name": "ADFGobibo",
+	"properties": {
+		"globalParameters": {
+			"ServerName": {
+				"type": "string",
+				"value": "gobibo.database.windows.net"
+			},
+			"DatabaseName": {
+				"type": "string",
+				"value": "gobibodb"
+			}
+		}
+	},
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "98419927-5f8c-4b35-acba-0316b7c86305",
+		"tenantId": "fe82a67c-faa7-4d9a-bbfa-7d25b7047b41"
+	}
+}
